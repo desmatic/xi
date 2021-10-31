@@ -1,0 +1,30 @@
+<?php
+
+/********************
+ * 
+ * Author:      Des Jones
+ * Project:     xi
+ * Date:        Mon 25 Oct 19:10:13 BST 2021
+ * Version:     1.0
+ *
+ *****************************************/
+
+require("../include/autoload.inc");
+
+$return = null;
+switch($_REQUEST["action"]) {
+    case "picklist":
+        $return = qaddress::jstree_picklist($_REQUEST['address']);
+        break;
+    case "refine":
+        $return = qaddress::jstree_refine_picklist($_REQUEST['moniker']);
+        break;
+    case "format": 
+        $return = qaddress::jstree_address($_REQUEST['moniker']);
+        break;
+}
+header('Content-Type: application/json');
+echo $return;
+
+/* debug */
+// echo "<pre>\n" . print_r($return, true) . "</pre>\n";

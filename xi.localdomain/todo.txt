@@ -1,0 +1,11 @@
+email confirmation
+sms confirmation
+address verification
+trusted network
+sms authentication - all agents must have a mobile phone to remote login
+actiononce
+add database session initialization settings, ansi_quotes, etc.
+get rid of model_abstract->__construct();
+fetch_all_cached() to use slaves
+load objects from unique key not just primary key
+rewrite content managment logic

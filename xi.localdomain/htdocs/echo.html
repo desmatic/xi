@@ -1,0 +1,19 @@
+<pre>
+<?php
+
+    echo "{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} -> {$_SERVER['SERVER_ADDR']}:{$_SERVER['SERVER_PORT']} (reverse lookup " . gethostbyaddr($_SERVER['SERVER_ADDR']) . ")\n";
+    foreach (apache_request_headers() as $name => $value) {
+        echo htmlentities($name) . ": " . htmlentities($value) . "\n";
+    }
+    echo "\nGET ";
+    echo htmlentities(print_r($_GET, true)) . "\n";
+    echo "POST ";
+    echo htmlentities(print_r($_POST, true)) . "\n";
+    echo "{$_SERVER['SERVER_ADDR']}:{$_SERVER['SERVER_PORT']} -> {$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} (reverse lookup " . gethostbyaddr($_SERVER['REMOTE_ADDR']) . ")\n";
+    flush();
+    foreach (apache_response_headers() as $name => $value) {
+        echo htmlentities($name) . ": " . htmlentities($value) . "\n";
+    }
+
+?>
+</pre>

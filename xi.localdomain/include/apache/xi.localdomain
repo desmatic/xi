@@ -1,0 +1,78 @@
+<VirtualHost xi.localdomain:80>
+        ServerAdmin webmaster@xi
+        ServerName xi
+        ServerAlias xi xi.localdomain
+        DocumentRoot /var/www/xi.localdomain/htdocs
+        #Header set Access-Control-Allow-Origin "*"
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride All
+        </Directory>
+        <Directory /var/www/xi.localdomain/htdocs>
+                Options Indexes FollowSymLinks MultiViews
+                #AllowOverride None
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+        <Directory "/usr/lib/cgi-bin">
+                AllowOverride None
+                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                Order allow,deny
+                Allow from all
+        </Directory>
+
+        <IfModule mod_rewrite.c>
+                RewriteEngine On
+                # apache 2.4 enable debug rewrite log
+                # LogLevel info rewrite:trace8
+                # apache < 2.4 enable debug rewrite log
+                # RewriteLog ${APACHE_LOG_DIR}/xi.localdomain.rewrite.log
+                # RewriteLogLevel 9
+                        
+                ## Begin - xi
+                # rewrite file downloads
+                #RewriteCond %{REQUEST_URI} getfoo\.html
+                RewriteCond %{REQUEST_URI} getfile/([A-Za-z0-9_]+)/([a-z0-9]+)/([0-9]+)/(.+)
+                RewriteRule getfile/([A-Za-z0-9_]+)/([a-z0-9]+)/([0-9]+)/(.+) /getfile.html?action=controller_getfile.$1&md5sum=$2&bytes=$3&filename=$4 [L]
+                #RewriteRule ^(.*)$ /getfile.html?string=$1&blah=$2 [L]
+                #
+                # If the requested path and file is not /index.html and the request
+                # has not already been internally rewritten to the index.html script
+                RewriteCond %{REQUEST_URI} !index\.html
+                RewriteCond %{ENV:REDIRECT_STATUS} ^$
+                # the requested path and file doesn't directly match a physical file
+                #RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
+                # and the requested path and file doesn't directly match a physical folder
+                #RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
+                RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-l 
+                # internally rewrite the request to the index.html script
+                RewriteRule ^(.*/)*.+$ /$1index\.html [L]
+                
+                # redirect all request to secure port
+                #RewriteCond     %{SERVER_PORT} !^443$
+                #RewriteRule     ^(.*)$ https://www.sodapop1$1 [L,R]
+        </IfModule>
+
+        ErrorLog ${APACHE_LOG_DIR}/xi.localdomain.error.log
+
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/xi.localdomain.access.log combined
+
+    Alias /doc/ "/usr/share/doc/"
+    <Directory "/usr/share/doc/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    </Directory>
+</VirtualHost>

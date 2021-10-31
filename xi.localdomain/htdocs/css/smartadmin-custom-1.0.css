@@ -1,0 +1,16 @@
+.has-error input[type="password"],
+.has-error input[type="password"] + .input-group-addon {
+  border-color: #b94a48;
+}
+.has-error input[type="password"] + .input-group-addon {
+  background-color: #f2dede;
+  color: #b94a48;
+}
+.has-error input[type="password"]:focus,
+.has-error input[type="password"]:focus + .input-group-addon {
+  border-color: #c05e5e;
+}
+.has-error input[type="password"]:focus + .input-group-addon {
+  background-color: #c05e5e;
+  color: #ffffff;
+}

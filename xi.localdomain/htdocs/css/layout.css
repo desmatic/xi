@@ -1,0 +1,103 @@
+
+/********************
+ * 
+ * Author:      Des Jones
+ * Project:     xi
+ * Date:        Thu Nov  7 11:50:08 GMT 2013
+ * Version:     1.0
+ *
+ *****************************************/
+
+.logincentertop {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.logincenterleft {
+    margin-left: -9.3em;
+    position: absolute;
+    top: -12em;
+    left: 50%;
+}
+
+.scrollbox {
+    overflow: scroll;
+    font-size: .8em;
+    border: 1px solid #BDBDBD;
+}
+
+.addressbox {
+    height: 36.5em;
+}
+
+.height50 {
+    height: 50em;
+}
+
+.height40 {
+    height: 40em;
+}
+
+.height35 {
+    height: 35em;
+}
+
+.height30 {
+    height: 30em;
+}
+
+/* workflow */
+.workflow {
+    float: left;
+    width: 180px;
+    height: 240px;
+    text-align: center;
+    margin-right: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.workflow h2 {
+    display: block;
+    margin: 0;
+    text-align: center;
+    height: 150px;
+    font-size: 100px;
+    margin-top: 20px;
+    color: white;
+}
+
+.workflow .workflowcontent {
+    width: 85%;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.workflowred {
+    background-image: url('/img/layout/workflow-red.png');
+}
+
+.workflowgreen {
+    background-image: url('/img/layout/workflow-green.png');
+}
+
+/* addresses */
+.addresslist-entry {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid;
+}
+
+li.addresslist-entry:first-child {
+    border-color: rgb(138, 195, 139);
+    color: rgb(53, 102, 53);
+    background: rgb(205, 224, 196);
+}
+
+/* font awesome */
+.fa-clickme:hover {
+    cursor: pointer;
+    color: black;
+}

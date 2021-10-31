@@ -1,0 +1,209 @@
+
+/********************
+ * 
+ * Author:      Des Jones
+ * Project:     xi
+ * Date:        Thu Nov  7 11:50:08 GMT 2013
+ * Version:     1.0
+ *
+ *****************************************/
+
+.fullwidth {
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.normal {
+    font-style: normal;
+}
+
+/* 7pt */
+.tiny {
+    font-size: 0.64em;
+}
+
+/* 8 pt */
+.smallest {
+    font-size: 0.74em;
+}
+
+/* 9 pt */
+.smaller {
+    font-size: 0.85em;
+}
+
+/* 10 pt */
+.medium {
+    font-size: 1em;
+}
+
+/* 12pt */
+.larger {
+    font-size: 1.25em;
+}
+
+/* 16pt */
+.largest {
+    font-size: 1.65em;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.locked {
+    font-style: italic;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
+}
+
+.valigntop td {
+    vertical-align: top;
+}
+
+.lerror {
+    color: red;
+}
+
+.breakword {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.nobreakword {
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+.padded {
+    padding: .5em;
+}
+
+.vpadded {
+    padding: .5em 0em;
+}
+
+.hpadded {
+    padding: .0em .5em;
+}
+
+.rpadded {
+    padding-right: 5px;
+}
+
+.margin {
+    margin: .5em;
+}
+
+.liststylenone {
+    list-style: none;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+/* 
+ * 
+ * bootstrap default overrides 
+ *
+ */
+.nav-stacked {
+    overflow-y: auto;
+    width: 100%;
+}
+
+.nav-stacked li {
+    width: 100%;
+}
+
+/* customized dropdowns for the side nav */
+.nav-stacked>li.dropdown>ul.dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+/*    background-color: transparent;*/
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+/* jquery Context Menu icons */
+.context-menu-list {
+    font-size: 1em;
+}
+
+.context-menu-item.icon-email:before {
+    position: absolute;
+    font-family: FontAwesome;
+    left: .5em;
+    content: "\f003";
+}
+
+.context-menu-item.icon-share:before {
+    position: absolute;
+    font-family: FontAwesome;
+    left: .5em;
+    content: "\f007";
+}
+
+.context-menu-item.icon-trash:before {
+    position: absolute;
+    font-family: FontAwesome;
+    left: .5em;
+    content: "\f014";
+}
+
+.context-menu-item.icon-restore:before {
+    position: absolute;
+    font-family: FontAwesome;
+    left: .5em;
+    content: "\f0e2";
+}
+
+.context-menu-item.icon-detail:before {
+    position: absolute;
+    font-family: FontAwesome;
+    left: .5em;
+    content: "\f128";
+}
+
+/* 
+ * this is a hack to get the fixed table column in a 
+ * datatable to line up correctly
+ */
+.DTFC_LeftWrapper div[style] {
+    top: -3px !important;
+}
+
+.fixedtable td {
+    word-break: keep-all;
+    word-wrap: normal;
+    white-space: nowrap;
+}
