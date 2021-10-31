@@ -13,8 +13,8 @@ class define {
 
     const DEBUG = true;
     const VERSION = "9";
-    const DOCUMENT_ROOT = "/var/www/xi/xi.localdomain/htdocs/";
-    const SHARED_VIEWS = "/var/www/xi/xi.localdomain/htdocs/include/";
+    const DOCUMENT_ROOT = "/var/www/xi.localdomain/htdocs/";
+    const SHARED_VIEWS = "/var/www/xi.localdomain/htdocs/include/";
     const TEMPLATE_DIR_RELATIVE_TO_CLASS = "/../template/";
     const TEMPLATE_DEFAULT = "smartadmin.inc";
     const TEMPLATE_BOOTSTRAP = "bootstrap.inc";

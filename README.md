@@ -1,2 +1,2 @@
 # xi
-Lightweight CRM/ERP framework
+Privileged based lightweight scalable CRM/ERP framework
